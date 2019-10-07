@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        -const variable = true
+        title= title + ' ' + title2
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        style.
+            p {
+                color: red;
+            }
+
+    body
+        #han(width=500)
+        // <div id="han" width="500"></div>
+        span.express.nodejs
+        //<span class="express nodejs"></span>
+        button(type='submit') 전송
+        //<button type='submit'>전송</button>
+        if variable
+            div true
+        else
+            div false
+        for i in fruits
+            div=i
+        p
+            | hello
+            | write several line
+            br
+            | add tag in the middle
+        script.
+            var message = 'pug';
+            alert(message);
