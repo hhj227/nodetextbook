@@ -1,16 +1,7 @@
-doctype html
-html
-    head
-        -const variable = true
-        title= title + ' ' + title2
-        link(rel='stylesheet', href='/stylesheets/style.css')
-        style.
-            p {
-                color: red;
-            }
+extends lay.pug
 
-    body
-        #han(width=500)
+block content
+    #han(width=500)
         // <div id="han" width="500"></div>
         span.express.nodejs
         //<span class="express nodejs"></span>
@@ -27,6 +18,8 @@ html
             | write several line
             br
             | add tag in the middle
-        script.
-            var message = 'pug';
-            alert(message);
+
+block script
+    script.
+        var message = 'pug';
+        alert(message);

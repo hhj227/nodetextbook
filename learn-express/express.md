@@ -118,3 +118,9 @@ pug는 들여쓰기로 부모 자식 태그를 구분한다.
 내용은 태그 한 칸 띄고 작성
 아이디는 #, 클래스는 .
 |로 여러 줄, 태그.으로 여러줄
+
+
+웹 페이지에서 중복되는 부분은 include나 layout으로 해결
+
+https://pugjs.org/api/getting-started.html
+

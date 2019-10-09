@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+      <html>
+      <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+      </head>
+      <body>
+      <% include header.ejs %>
+      <h1><%= title %></h1>
+<!--   i of fruits: value, i in fruits: key   -->
+      <% for (i of fruits) { %>
+        <p>Welcome to <%= i %></p>
+      <% } %>
+      <% if (title === 'ejs') { %>
+        <p>lets study ejs</p>
+      <% } else { %>
+        <p>i'm so tired i could sleep a thousand years</p>
+      <% } %>
+      <% include footer.ejs %>
+  </body>
+</html>
