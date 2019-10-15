@@ -17,10 +17,10 @@ function getUser() {
             users.map(function (user) {
                 var row = document.createElement('tr');
                 row.addEventListener('click', function () {
-                    getComment(user.id);
+                    getComment(user._id);
                 });
                 var td = document.createElement('td');
-                td.textContent = user.id;
+                td.textContent = user._id;
                 row.appendChild(td);
                 td = document.createElement('td');
                 td.textContent = user.name;
@@ -51,10 +51,10 @@ function getComment(id) {
             comments.map(function (comment) {
                 var row = document.createElement('tr');
                 var td = document.createElement('td');
-                td.textContent = comment.id;
+                td.textContent = comment._id;
                 row.appendChild(td);
                 td = document.createElement('td');
-                td.textContent = comment.user.name;
+                td.textContent = comment.commenter.name;
                 row.appendChild(td);
                 td = document.createElement('td');
                 td.textContent = comment.comment;
@@ -75,7 +75,7 @@ function getComment(id) {
                             console.error(xhr.responseText);
                         }
                     };
-                    xhr.open('PATCH', '/comments/' + comment.id);
+                    xhr.open('PATCH', '/comments/' + comment._id);
                     xhr.setRequestHeader('Content-Type', 'application/json');
                     xhr.send(JSON.stringify({ comment: newComment }));
                 });
@@ -91,7 +91,7 @@ function getComment(id) {
                             console.error(xhr.responseText);
                         }
                     };
-                    xhr.open('DELETE', '/comments/' + comment.id);
+                    xhr.open('DELETE', '/comments/' + comment._id);
                     xhr.send();
                 });
                 td = document.createElement('td');
@@ -113,7 +113,7 @@ function getComment(id) {
 document.getElementById('user-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var name = e.target.username.value;
-    var age = parseInt(e.target.age.value);
+    var age = e.target.age.value;
     var married = e.target.married.checked;
     if (!name) {
         return alert('이름을 입력하세요');
@@ -140,7 +140,7 @@ document.getElementById('user-form').addEventListener('submit', function (e) {
 // 댓글 등록 시
 document.getElementById('comment-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    var id = parseInt(e.target.userid.value);
+    var id = e.target.userid.value;
     var comment = e.target.comment.value;
     if (!id) {
         return alert('아이디를 입력하세요');

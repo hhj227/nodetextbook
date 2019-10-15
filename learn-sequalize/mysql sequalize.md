@@ -58,3 +58,18 @@ models 폴더에 js 파일들 만들어서 데이터 저장할 공간 미리 만
 
 
 create 생성, findall 모두 찾기, find 하나만 찾기 모두 Promise 지원 메서드
+
+
+
+# 에러났을 때 대처법
+
+network tab을 열고 Header - request payload 확인
+preview로 미리보기도 가능
+정적파일 가져오면 그대로 보임
+
+
+findAll
+update
+destroy
+create
+

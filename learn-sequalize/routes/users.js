@@ -11,12 +11,13 @@ router.get('/', (req, res, next) => {
           })
           .catch((err) => {
             console.error(err);
-            next(err);
-          });
+next(err);
+});
 });
 
 // POST /users
 router.post('/', (req, res, next) => {
+    console.log(req.body);
       User.create({
         name: req.body.name,
         age: req.body.age,
